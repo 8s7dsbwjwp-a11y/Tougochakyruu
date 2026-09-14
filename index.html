@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Арина & Тимур | Тойго чакыруу</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#fffdf8;
+    color:#222;
+    font-family:'Montserrat',sans-serif;
+    overflow-x:hidden;
+}
+
+section{
+    position:relative;
+    min-height:100vh;
+    overflow:hidden;
+}
+
+.script{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+}
+
+/* =========================
+   ЖАЛБЫРАКТАР
+========================= */
+
+.leaf{
+    position:absolute;
+    width:22px;
+    height:11px;
+    background:#cdd6a9;
+    border-radius:100% 0 100% 0;
+    opacity:.7;
+    animation:fall 9s linear infinite;
+    pointer-events:none;
+}
+
+.leaf:nth-child(1){left:5%;top:5%;animation-delay:0s}
+.leaf:nth-child(2){left:20%;top:20%;animation-delay:2s}
+.leaf:nth-child(3){left:40%;top:0%;animation-delay:4s}
+.leaf:nth-child(4){left:65%;top:15%;animation-delay:1s}
+.leaf:nth-child(5){left:85%;top:30%;animation-delay:3s}
+.leaf:nth-child(6){left:50%;top:40%;animation-delay:5s}
+.leaf:nth-child(7){left:10%;top:70%;animation-delay:2s}
+.leaf:nth-child(8){left:90%;top:75%;animation-delay:4s}
+
+@keyframes fall{
+    from{
+        transform:translateY(-30px) rotate(0deg);
+    }
+    to{
+        transform:translateY(110vh) rotate(180deg);
+    }
+}
+
+/* =========================
+   КОНВЕРТ
+========================= */
+
+#envelopeScreen{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+        linear-gradient(rgba(89,116,140,.65),rgba(89,116,140,.65)),
+        url("photo1.jpg") center/cover no-repeat;
+}
+
+.envelope{
+    width:88%;
+    max-width:650px;
+    background:#fffef8;
+    padding:55px 25px 45px;
+    text-align:center;
+    position:relative;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+    cursor:pointer;
+    transition:.5s;
+}
+
+.envelope:hover{
+    transform:scale(1.02);
+}
+
+.envelopeTriangle{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:210px;
+    background:#faf9f0;
+    clip-path:polygon(0 0,100% 0,50% 100%);
+}
+
+.envelopeContent{
+    position:relative;
+    z-index:2;
+}
+
+.envelopeTitle{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(48px,10vw,90px);
+    font-style:italic;
+    color:#46682f;
+    margin-bottom:160px;
+}
+
+.wax{
+    width:85px;
+    height:85px;
+    margin:auto;
+    border-radius:50%;
+    background:#d6aa39;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    box-shadow:
+        inset 0 0 0 5px #efd477,
+        0 5px 15px rgba(0,0,0,.2);
+}
+
+.envelopeText{
+    margin-top:30px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:25px;
+}
+
+/* =========================
+   НЕГИЗГИ САЙТ
+========================= */
+
+#mainSite{
+    display:none;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    background:white;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:40px 20px;
+    text-align:center;
+}
+
+.heroImage{
+    width:min(90%,700px);
+    max-height:65vh;
+    object-fit:cover;
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+}
+
+.heroDate{
+    font-family:'Cormorant Garamond',serif;
+    font-size:32px;
+    margin-top:25px;
+}
+
+.names{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:clamp(50px,10vw,95px);
+    color:#46682f;
+}
+
+/* =========================
+   ЧАКЫРУУ
+========================= */
+
+.invitation{
+    background:#fffefb;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:70px 20px;
+}
+
+.title{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    color:#46682f;
+    font-size:clamp(48px,9vw,82px);
+    font-weight:500;
+    line-height:1;
+}
+
+.subtitle{
+    font-family:'Cormorant Garamond',serif;
+    font-size:30px;
+    margin-top:35px;
+}
+
+.childNames{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    color:#46682f;
+    font-size:clamp(40px,8vw,70px);
+    margin:20px 0;
+}
+
+.invitationText{
+    max-width:850px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(23px,4vw,33px);
+    line-height:1.65;
+}
+
+/* =========================
+   КҮН
+========================= */
+
+.dateSection{
+    background:white;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:50px 20px;
+}
+
+.dateTitle{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:clamp(40px,8vw,75px);
+    color:#46682f;
+}
+
+.calendar{
+    margin-top:40px;
+    width:min(90%,650px);
+}
+
+.week{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    margin-bottom:12px;
+    font-size:16px;
+}
+
+.days{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:7px;
+}
+
+.days div{
+    min-height:45px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Cormorant Garamond',serif;
+    font-size:20px;
+}
+
+.weddingDay{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#46682f;
+    color:white!important;
+    margin:auto;
+}
+
+.time{
+    margin-top:40px;
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    color:#46682f;
+    font-size:40px;
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown{
+    min-height:100vh;
+    background:
+        linear-gradient(rgba(70,60,45,.55),rgba(70,60,45,.55)),
+        url("photo2.jpg") center/cover no-repeat;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.countdownTitle{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:clamp(50px,9vw,85px);
+    margin-bottom:40px;
+}
+
+.timer{
+    width:min(90%,700px);
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+.timerBox{
+    padding:22px 5px;
+    background:rgba(255,255,255,.16);
+    backdrop-filter:blur(7px);
+    border:1px solid rgba(255,255,255,.4);
+}
+
+.timerNumber{
+    font-size:clamp(30px,7vw,60px);
+    font-weight:300;
+}
+
+.timerLabel{
+    font-size:12px;
+    margin-top:8px;
+}
+
+/* =========================
+   ДАРЕК
+========================= */
+
+.location{
+    min-height:100vh;
+    background:#fffefb;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:50px 20px;
+}
+
+.locationTitle{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:clamp(50px,9vw,80px);
+    color:#46682f;
+}
+
+.locationText{
+    font-family:'Cormorant Garamond',serif;
+    font-size:30px;
+    line-height:1.6;
+    margin-top:30px;
+}
+
+.restaurant{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(42px,8vw,75px);
+    margin:25px 0;
+}
+
+.mapButton{
+    display:inline-block;
+    margin-top:30px;
+    background:#809d65;
+    color:white;
+    text-decoration:none;
+    padding:16px 45px;
+    border-radius:30px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:24px;
+    transition:.3s;
+}
+
+.mapButton:hover{
+    transform:translateY(-3px);
+}
+
+/* =========================
+   СҮРӨТ
+========================= */
+
+.photoSection{
+    min-height:100vh;
+    padding:0;
+}
+
+.photoSection img{
+    width:100%;
+    height:100vh;
+    object-fit:cover;
+}
+
+/* =========================
+   RSVP
+========================= */
+
+.rsvp{
+    min-height:100vh;
+    background:#fffefb;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.rsvpTitle{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    color:#46682f;
+    font-size:clamp(50px,9vw,80px);
+}
+
+.rsvpText{
+    font-family:'Cormorant Garamond',serif;
+    font-size:28px;
+    margin:25px 0;
+}
+
+.form{
+    width:min(90%,650px);
+}
+
+.input,
+.textarea{
+    width:100%;
+    padding:17px;
+    border:1px solid #999;
+    border-radius:10px;
+    margin-bottom:18px;
+    font-family:'Montserrat',sans-serif;
+    font-size:16px;
+    outline:none;
+}
+
+.textarea{
+    min-height:110px;
+    resize:none;
+}
+
+.radio{
+    text-align:left;
+    margin:15px 0 25px;
+}
+
+.radio label{
+    display:block;
+    margin:14px 0;
+    font-size:17px;
+}
+
+.counterTitle{
+    font-family:'Cormorant Garamond',serif;
+    font-size:26px;
+}
+
+.counter{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    margin:20px 0 30px;
+}
+
+.counter button{
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:#809d65;
+    color:white;
+    font-size:25px;
+    cursor:pointer;
+}
+
+#guestCount{
+    font-size:25px;
+}
+
+.submit{
+    width:100%;
+    padding:18px;
+    background:#6e8c59;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:27px;
+    cursor:pointer;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    min-height:70vh;
+    background:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:50px 20px;
+}
+
+.footerNames{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    color:#46682f;
+    font-size:clamp(55px,11vw,105px);
+}
+
+.footerText{
+    font-family:'Cormorant Garamond',serif;
+    font-size:28px;
+    margin-top:25px;
+}
+
+/* =========================
+   МУЗЫКА
+========================= */
+
+.musicButton{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:1000;
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:#6e8c59;
+    color:white;
+    font-size:21px;
+    cursor:pointer;
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
+}
+
+/* =========================
+   МОБИЛЬНАЯ ВЕРСИЯ
+========================= */
+
+@media(max-width:600px){
+
+    .envelope{
+        width:92%;
+    }
+
+    .envelopeTitle{
+        margin-bottom:135px;
+    }
+
+    .invitationText{
+        font-size:23px;
+    }
+
+    .timer{
+        gap:5px;
+    }
+
+    .timerBox{
+        padding:18px 3px;
+    }
+
+    .timerLabel{
+        font-size:9px;
+    }
+
+    .days{
+        gap:2px;
+    }
+
+    .days div{
+        font-size:16px;
+    }
+
+    .weddingDay{
+        width:38px;
+        height:38px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     КОНВЕРТ
+========================= -->
+
+<section id="envelopeScreen">
+
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+
+    <div class="envelope" onclick="openInvitation()">
+
+        <div class="envelopeTriangle"></div>
+
+        <div class="envelopeContent">
+
+            <div class="envelopeTitle">
+                Арина & Тимур
+            </div>
+
+            <div class="wax">
+                ♥
+            </div>
+
+            <div class="envelopeText">
+                Чакыруу үчүн басыңыз
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     НЕГИЗГИ САЙТ
+========================= -->
+
+<div id="mainSite">
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+
+    <img
+        src="photo1.jpg"
+        class="heroImage"
+        alt="Арина жана Тимур"
+    >
+
+    <div class="heroDate">
+        04.10.2026
+    </div>
+
+    <div class="names">
+        Арина & Тимур
+    </div>
+
+</section>
+
+
+<!-- ЧАКЫРУУ -->
+
+<section class="invitation">
+
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+    <div class="leaf"></div>
+
+    <div class="title">
+        Урматтуу биздин<br>
+        сүйүктүү конокторубуз!
+    </div>
+
+    <div class="subtitle">
+        Сиздерди балдарыбыз
+    </div>
+
+    <div class="childNames">
+        Арина менен Тимурдун
+    </div>
+
+    <div class="invitationText">
+        үйлөнүү үлпөт тоюна арналган
+        салтанаттуу кечебизге келип,
+        ак дасторконубуздан даам сызып,
+        батаныздарды берип,
+        кадырлуу коногубуз болуп кетүүгө
+        чакырабыз!
+    </div>
+
+</section>
+
+
+<!-- КҮН -->
+
+<section class="dateSection">
+
+    <div class="dateTitle">
+        2026-жылдын 4-октябры
+    </div>
+
+    <div class="calendar">
+
+        <div class="week">
+            <div>Дш</div>
+            <div>Шш</div>
+            <div>Шр</div>
+            <div>Бш</div>
+            <div>Жм</div>
+            <div>Иш</div>
+            <div>Жк</div>
+        </div>
+
+        <div class="days">
+
+            <div></div>
+            <div></div>
+            <div></div>
+
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+
+            <div class="weddingDay">
+                4
+            </div>
+
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+
+            <div>12</div>
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+            <div>16</div>
+            <div>17</div>
+            <div>18</div>
+
+            <div>19</div>
+            <div>20</div>
+            <div>21</div>
+            <div>22</div>
+            <div>23</div>
+            <div>24</div>
+            <div>25</div>
+
+            <div>26</div>
+            <div>27</div>
+            <div>28</div>
+            <div>29</div>
+            <div>30</div>
+            <div>31</div>
+
+        </div>
+
+    </div>
+
+    <div class="time">
+        саат — 15:00
+    </div>
+
+</section>
+
+
+<!-- COUNTDOWN -->
+
+<section class="countdown">
+
+    <div class="countdownTitle">
+        Тойго чейин:
+    </div>
+
+    <div class="timer">
+
+        <div class="timerBox">
+            <div class="timerNumber" id="days">
+                0
+            </div>
+            <div class="timerLabel">
+                КҮН
+            </div>
+        </div>
+
+        <div class="timerBox">
+            <div class="timerNumber" id="hours">
+                0
+            </div>
+            <div class="timerLabel">
+                СААТ
+            </div>
+        </div>
+
+        <div class="timerBox">
+            <div class="timerNumber" id="minutes">
+                0
+            </div>
+            <div class="timerLabel">
+                МҮНӨТ
+            </div>
+        </div>
+
+        <div class="timerBox">
+            <div class="timerNumber" id="seconds">
+                0
+            </div>
+            <div class="timerLabel">
+                СЕКУНД
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ДАРЕК -->
+
+<section class="location">
+
+    <div class="locationTitle">
+        Дарегибиз:
+    </div>
+
+    <div class="locationText">
+        Бишкек шаары<br>
+        Октябрь району
+    </div>
+
+    <div class="restaurant">
+        Ресторан «Салтанат»
+    </div>
+
+    <div class="locationText">
+        04.10.2026<br>
+        саат 15:00
+    </div>
+
+    <a
+        href="https://www.google.com/maps/search/?api=1&query=Ресторан+Салтанат+Бишкек"
+        target="_blank"
+        class="mapButton"
+    >
+        📍 Картадан көрүү
+    </a>
+
+</section>
+
+
+<!-- СҮРӨТ -->
+
+<section class="photoSection">
+
+    <img
+        src="photo2.jpg"
+        alt="Wedding"
+    >
+
+</section>
+
+
+<!-- RSVP -->
+
+<section class="rsvp">
+
+    <div class="rsvpTitle">
+        Тойго келесизби?
+    </div>
+
+    <div class="rsvpText">
+        Келериңизди билдирип коюңуз
+    </div>
+
+    <form
+        class="form"
+        onsubmit="sendRSVP(event)"
+    >
+
+        <input
+            class="input"
+            id="guestName"
+            type="text"
+            placeholder="Атыңызды жазыңыз"
+            required
+        >
+
+        <div class="radio">
+
+            <label>
+                <input
+                    type="radio"
+                    name="answer"
+                    value="Ооба, барам"
+                    required
+                >
+                Ооба, барам
+            </label>
+
+            <label>
+                <input
+                    type="radio"
+                    name="answer"
+                    value="Мен келинчегим менен барам"
+                >
+                Мен келинчегим менен барам
+            </label>
+
+            <label>
+                <input
+                    type="radio"
+                    name="answer"
+                    value="Бара албайм"
+                >
+                Бара албайм
+            </label>
+
+        </div>
+
+        <div class="counterTitle">
+            Канча адам менен келесиз?
+        </div>
+
+        <div class="counter">
+
+            <button
+                type="button"
+                onclick="changeGuests(-1)"
+            >
+                −
+            </button>
+
+            <span id="guestCount">
+                1
+            </span>
+
+            <button
+                type="button"
+                onclick="changeGuests(1)"
+            >
+                +
+            </button>
+
+        </div>
+
+        <textarea
+            class="textarea"
+            id="guestMessage"
+            placeholder="Каалоо-тилегиңиз..."
+        ></textarea>
+
+        <button
+            class="submit"
+            type="submit"
+        >
+            Жөнөтүү
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<section class="footer">
+
+    <div>
+
+        <div class="footerNames">
+            Арина & Тимур
+        </div>
+
+        <div class="footerText">
+            Тойго келип, конок болуп кетиңиздер 🤍
+        </div>
+
+        <div class="footerText">
+            04.10.2026
+        </div>
+
+    </div>
+
+</section>
+
+</div>
+
+
+<!-- =========================
+     МУЗЫКА
+========================= -->
+
+<audio
+    id="music"
+    src="music.mp3"
+    loop
+></audio>
+
+<button
+    class="musicButton"
+    id="musicButton"
+    onclick="toggleMusic()"
+>
+    ♫
+</button>
+
+
+<script>
+
+/* =========================
+   КОНВЕРТТИ АЧУУ
+========================= */
+
+function openInvitation(){
+
+    const envelope =
+        document.getElementById("envelopeScreen");
+
+    const main =
+        document.getElementById("mainSite");
+
+    const music =
+        document.getElementById("music");
+
+    envelope.style.transition="1s";
+    envelope.style.opacity="0";
+
+    setTimeout(function(){
+
+        envelope.style.display="none";
+        main.style.display="block";
+
+        window.scrollTo(0,0);
+
+        music.play().catch(function(){
+
+            console.log(
+                "Музыканы баскыч аркылуу күйгүзүңүз"
+            );
+
+        });
+
+    },1000);
+}
+
+
+/* =========================
+   МУЗЫКА
+========================= */
+
+let playing=false;
+
+function toggleMusic(){
+
+    const music =
+        document.getElementById("music");
+
+    const button =
+        document.getElementById("musicButton");
+
+    if(playing){
+
+        music.pause();
+
+        button.innerHTML="♫";
+
+        playing=false;
+
+    }else{
+
+        music.play();
+
+        button.innerHTML="❚❚";
+
+        playing=true;
+
+    }
+
+}
+
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+const weddingDate =
+    new Date(
+        "October 4, 2026 15:00:00"
+    ).getTime();
+
+
+function updateCountdown(){
+
+    const now =
+        new Date().getTime();
+
+    const difference =
+        weddingDate-now;
+
+
+    if(difference<=0){
+
+        document.getElementById("days").innerText="0";
+        document.getElementById("hours").innerText="0";
+        document.getElementById("minutes").innerText="0";
+        document.getElementById("seconds").innerText="0";
+
+        return;
+    }
+
+
+    const days =
+        Math.floor(
+            difference /
+            (1000*60*60*24)
+        );
+
+
+    const hours =
+        Math.floor(
+            (difference %
+            (1000*60*60*24)) /
+            (1000*60*60)
+        );
+
+
+    const minutes =
+        Math.floor(
+            (difference %
+            (1000*60*60)) /
+            (1000*60)
+        );
+
+
+    const seconds =
+        Math.floor(
+            (difference %
+            (1000*60)) /
+            1000
+        );
+
+
+    document.getElementById("days").innerText =
+        days;
+
+    document.getElementById("hours").innerText =
+        hours;
+
+    document.getElementById("minutes").innerText =
+        minutes;
+
+    document.getElementById("seconds").innerText =
+        seconds;
+
+}
+
+
+updateCountdown();
+
+setInterval(
+    updateCountdown,
+    1000
+);
+
+
+/* =========================
+   КОНОК САНЫ
+========================= */
+
+let guestCount=1;
+
+
+function changeGuests(value){
+
+    guestCount += value;
+
+    if(guestCount<1){
+        guestCount=1;
+    }
+
+    if(guestCount>20){
+        guestCount=20;
+    }
+
+    document.getElementById(
+        "guestCount"
+    ).innerText=guestCount;
+
+}
+
+
+/* =========================
+   RSVP
+========================= */
+
+function sendRSVP(event){
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById(
+            "guestName"
+        ).value;
+
+    const answer =
+        document.querySelector(
+            'input[name="answer"]:checked'
+        ).value;
+
+
+    alert(
+        "Рахмат, "+name+" 🤍\n\n"+
+        "Жооп: "+answer+"\n"+
+        "Коноктордун саны: "+guestCount
+    );
+
+}
+
+</script>
+
+</body>
+</html>
